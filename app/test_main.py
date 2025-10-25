@@ -30,7 +30,10 @@ class TestExceptions:
         "cat_age, dog_age, expected_exception",
         [
             (-15, -15, ValueError),
-            ("15", "15", TypeError)
+            (15, -15, ValueError),
+            (-15, 15, ValueError),
+            ("15", 15, TypeError),
+            (15, "15", TypeError),
         ]
     )
     def test_human_age(
